@@ -14,7 +14,7 @@ do
 
     if [ $DISK_USAGE -gt $DISK_THRESHOLD ]
     then
-         MESSAGE+="your folder:$FOLDER disk usage:$DISK_USAGE has reached threshold:$DISK_THRESHOLD\n"
+         MESSAGE+="your folder:$FOLDER disk usage:$DISK_USAGE has reached threshold:$DISK_THRESHOLD,\n"
     fi 
 
 done <<< $DISK_FILE_SYS
