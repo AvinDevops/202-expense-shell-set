@@ -9,5 +9,5 @@ do
     #echo $line
     FOLDER=$(echo $line | awk -F " " '{print $NF}')
     DISK_USAGE=$(echo $line | awk -F " " '{print $6F}' | cut -d "%" -f1)
-    echo "Folder is $FOLDER, Disk usage is $DISK_USAGE, Threshold is $THRESHOLD "
+    echo "Folder is $FOLDER, Disk usage is $DISK_USAGE, Threshold is $DISK_THRESHOLD "
 done <<< $DISK_FILE_SYS
