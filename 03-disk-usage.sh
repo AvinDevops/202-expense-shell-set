@@ -4,6 +4,8 @@ DISK_FILE_SYS=$(df -hT | grep xfs)
 
 DISK_THRESHOLD=10
 
+MESSAGE=""
+
 while IFS= read -r line
 do
     #echo $line
@@ -12,8 +14,7 @@ do
 
     if [ $DISK_USAGE -gt $DISK_THRESHOLD ]
     then
-        echo "your folder:$FOLDER disk usage:$DISK_USAGE has reached threshold:$DISK_THRESHOLD"
+         MESSAGE="your folder:$FOLDER disk usage:$DISK_USAGE has reached threshold:$DISK_THRESHOLD"
     fi 
 
-    echo "Message_alert:your folder:$FOLDER disk usage:$DISK_USAGE has reached threshold:$DISK_THRESHOLD"
 done <<< $DISK_FILE_SYS
