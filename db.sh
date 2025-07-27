@@ -2,6 +2,8 @@
 
 source ./common.sh
 
+echo $MYSQL_ROOT_PASSWORD
+
 dnf install mysql-server -y &>>$LOGFILE
 
 
