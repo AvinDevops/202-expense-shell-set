@@ -18,3 +18,5 @@ do
     fi 
 
 done <<< $DISK_FILE_SYS
+
+echo $MESSAGE
