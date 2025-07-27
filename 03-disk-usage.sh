@@ -19,4 +19,4 @@ do
 
 done <<< $DISK_FILE_SYS
 
-echo  -e $MESSAGE
+echo  -e "Disk_Alert_Msg:$MESSAGE"
