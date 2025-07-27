@@ -2,6 +2,14 @@
 
 set -e
 
+failure(){
+    echo "line no is : $1"
+    echo "error description: $2"
+}
+
+trap 'failure ${LINENO} "$BASH_COMMAND"'ERR
+
+
 USERID=$(id -u)
 
 if [ $USERID -ne 0 ]
