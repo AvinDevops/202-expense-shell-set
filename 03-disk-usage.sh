@@ -15,4 +15,5 @@ do
         echo "your folder:$FOLDER disk usage:$DISK_USAGE has reached threshold:$DISK_THRESHOLD"
     fi 
 
+    echo "Message_alert:your folder:$FOLDER disk usage:$DISK_USAGE has reached threshold:$DISK_THRESHOLD"
 done <<< $DISK_FILE_SYS
