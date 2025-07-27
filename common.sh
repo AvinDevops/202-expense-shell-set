@@ -15,8 +15,6 @@ TIMESTAMP=$(date +%F-%H-%M-%S)
 SCRIPTNAME=$(echo $0 | cut -d "." -f1)
 LOGFILE=/tmp/$SCRIPTNAME-$TIMESTAMP.log
 
-MYSQL_ROOT_PASSWORD=ExpenseApp@1
-MYSQL_SERVER_IP=172.31.30.163
 
 #declaring colors
 R="\e[31m"
@@ -25,13 +23,15 @@ Y="\e[33m"
 N="\e[0m"
 
 # checking root user or not
-if [ $USERID -ne 0 ]
-then
-    echo -e "$R you are not root user $N"
-    exit
-else
-    echo -e "$G you are root user $N"
-fi
+check_root(){
+    if [ $USERID -ne 0 ]
+    then
+        echo -e "$R you are not root user $N"
+        exit
+    else
+        echo -e "$G you are root user $N"
+    fi
+}
 
 # creating function
 # VALIDATE(){

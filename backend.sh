@@ -2,6 +2,10 @@
 
 source ./common.sh
 
+check_root
+
+MYSQL_ROOT_PASSWORD=ExpenseApp@1
+MYSQL_SERVER_IP=172.31.30.163
 
 # configuring backend server
 
@@ -51,7 +55,7 @@ systemctl enable backend &>>$LOGFILE
 dnf install mysql -y &>>$LOGFILE
 
 
-mysql -h $MYSQL_SERVER_IP -uroot -p$MYSQL_ROOT_PASSWORD < /app/schema/backend.sql &>>$LOGFILE
+mysql -h $MYSQL_SERVER_IP -uroot -p${MYSQL_ROOT_PASSWORD} < /app/schema/backend.sql &>>$LOGFILE
 
 
 systemctl restart backend &>>$LOGFILE
